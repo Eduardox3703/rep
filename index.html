@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReptileNutrition - Premium Food for Reptiles</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>ReptileNutrition</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h2>Premium Nutrition for Your Reptile Friends</h2>
+            <p>High-quality, specialized food for all types of reptiles</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+    </div>
+
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All Products</button>
+                <button class="filter-btn" data-filter="lizard">Lizard Food</button>
+                <button class="filter-btn" data-filter="snake">Snake Food</button>
+                <button class="filter-btn" data-filter="turtle">Turtle Food</button>
+            </div>
+            
+            <div class="product-grid">
+                <!-- Lizard Food Products -->
+                <div class="product-card" data-category="lizard">
+                    <div class="product-image">
+                        <a href="product-details.html">
+                            <img src="/placeholder.svg?height=300&width=300" alt="Premium Crickets">
+                        </a>
+                        <div class="product-tag">Best Seller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Crickets</h3>
+                        <p>High-protein live crickets, perfect for bearded dragons and geckos.</p>
+                        <div class="product-price">$12.99</div>
+                        <button class="add-to-cart-btn" data-id="1" data-name="Premium Crickets" data-price="12.99">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="lizard">
+                    <div class="product-image">
+                        <img src="/placeholder.svg?height=300&width=300" alt="Bearded Dragon Pellets">
+                    </div>
+                    <div class="product-info">
+                        <h3>Bearded Dragon Pellets</h3>
+                        <p>Complete nutrition formula specifically designed for bearded dragons.</p>
+                        <div class="product-price">$18.99</div>
+                        <button class="add-to-cart-btn" data-id="2" data-name="Bearded Dragon Pellets" data-price="18.99">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Snake Food Products -->
+                <div class="product-card" data-category="snake">
+                    <div class="product-image">
+                        <img src="/placeholder.svg?height=300&width=300" alt="Frozen Mice">
+                        <div class="product-tag">Popular</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Frozen Mice</h3>
+                        <p>Humanely sourced frozen mice in various sizes for snakes.</p>
+                        <div class="product-price">$24.99</div>
+                        <button class="add-to-cart-btn" data-id="3" data-name="Frozen Mice" data-price="24.99">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="snake">
+                    <div class="product-image">
+                        <img src="/placeholder.svg?height=300&width=300" alt="Snake Vitamin Supplement">
+                    </div>
+                    <div class="product-info">
+                        <h3>Snake Vitamin Supplement</h3>
+                        <p>Essential vitamins and minerals to ensure your snake's optimal health.</p>
+                        <div class="product-price">$15.99</div>
+                        <button class="add-to-cart-btn" data-id="4" data-name="Snake Vitamin Supplement" data-price="15.99">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Turtle Food Products -->
+                <div class="product-card" data-category="turtle">
+                    <div class="product-image">
+                        <img src="/placeholder.svg?height=300&width=300" alt="Aquatic Turtle Pellets">
+                        <div class="product-tag">New</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Aquatic Turtle Pellets</h3>
+                        <p>Floating pellets with calcium and vitamin D3 for aquatic turtles.</p>
+                        <div class="product-price">$14.99</div>
+                        <button class="add-to-cart-btn" data-id="5" data-name="Aquatic Turtle Pellets" data-price="14.99">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="turtle">
+                    <div class="product-image">
+                        <img src="/placeholder.svg?height=300&width=300" alt="Dried Shrimp Mix">
+                    </div>
+                    <div class="product-info">
+                        <h3>Dried Shrimp Mix</h3>
+                        <p>Natural dried shrimp treat for turtles and other aquatic reptiles.</p>
+                        <div class="product-price">$9.99</div>
+                        <button class="add-to-cart-btn" data-id="6" data-name="Dried Shrimp Mix" data-price="9.99">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="feature">
+                <i class="fas fa-truck"></i>
+                <h3>Fast Shipping</h3>
+                <p>Free shipping on orders over $50</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-medal"></i>
+                <h3>Premium Quality</h3>
+                <p>All products are vet-approved</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-headset"></i>
+                <h3>Expert Support</h3>
+                <p>Reptile nutrition specialists available</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be added here dynamically -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount">$0.00</span>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay"></div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ReptileNutrition</h3>
+                    <p>Providing premium quality food for reptiles since 2010.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Reptile St, Herp City</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@reptilenutrition.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 ReptileNutrition. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
