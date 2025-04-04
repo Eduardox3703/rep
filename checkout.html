@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - ReptileNutrition</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">ReptileNutrition</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#products">Products</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="checkout-section">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / 
+                <span>Checkout</span>
+            </div>
+            
+            <h1 class="page-title">Checkout</h1>
+            
+            <div class="checkout-container">
+                <div class="checkout-summary">
+                    <h2>Order Summary</h2>
+                    <div class="checkout-items" id="checkout-items">
+                        <!-- Checkout items will be added dynamically -->
+                    </div>
+                    <div class="checkout-totals">
+                        <div class="checkout-row">
+                            <span>Subtotal</span>
+                            <span id="checkout-subtotal">$0.00</span>
+                        </div>
+                        <div class="checkout-row">
+                            <span>Shipping</span>
+                            <span id="checkout-shipping">$0.00</span>
+                        </div>
+                        <div class="checkout-row">
+                            <span>Tax</span>
+                            <span id="checkout-tax">$0.00</span>
+                        </div>
+                        <div class="checkout-row total">
+                            <span>Total</span>
+                            <span id="checkout-total">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="checkout-form-container">
+                    <div class="checkout-steps">
+                        <div class="checkout-step active" data-step="shipping">
+                            <div class="step-number">1</div>
+                            <div class="step-title">Shipping</div>
+                        </div>
+                        <div class="checkout-step" data-step="payment">
+                            <div class="step-number">2</div>
+                            <div class="step-title">Payment</div>
+                        </div>
+                        <div class="checkout-step" data-step="confirmation">
+                            <div class="step-number">3</div>
+                            <div class="step-title">Confirmation</div>
+                        </div>
+                    </div>
+                    
+                    <div class="checkout-forms">
+                        <!-- Shipping Form -->
+                        <form id="shipping-form" class="checkout-form active">
+                            <h2>Shipping Information</h2>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" id="first-name" name="first-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text" id="last-name" name="last-name" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address">Street Address</label>
+                                <input type="text" id="address" name="address" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <input type="text" id="city" name="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">State</label>
+                                    <select id="state" name="state" required>
+                                        <option value="">Select State</option>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AZ">Arizona</option>
+                                        <!-- Add all states here -->
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="zip">ZIP Code</label>
+                                <input type="text" id="zip" name="zip" required>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" id="shipping-next" class="btn">Continue to Payment</button>
+                            </div>
+                        </form>
+                        
+                        <!-- Payment Form -->
+                        <form id="payment-form" class="checkout-form">
+                            <h2>Payment Information</h2>
+                            
+                            <div class="payment-options">
+                                <div class="payment-option active">
+                                    <input type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
+                                    <label for="credit-card">Credit Card</label>
+                                </div>
+                                <div class="payment-option">
+                                    <input type="radio" id="paypal" name="payment-method" value="paypal">
+                                    <label for="paypal">PayPal</label>
+                                </div>
+                            </div>
+                            
+                            <div class="credit-card-form">
+                                <div class="card-container">
+                                    <div class="card-front">
+                                        <div class="card-type">
+                                            <i class="fab fa-cc-visa"></i>
+                                            <i class="fab fa-cc-mastercard"></i>
+                                            <i class="fab fa-cc-amex"></i>
+                                            <i class="fab fa-cc-discover"></i>
+                                        </div>
+                                        <div class="card-number-display">•••• •••• •••• ••••</div>
+                                        <div class="card-details">
+                                            <div class="card-holder">
+                                                <span class="label">Card Holder</span>
+                                                <span class="value">YOUR NAME</span>
+                                            </div>
+                                            <div class="card-expires">
+                                                <span class="label">Expires</span>
+                                                <span class="value">MM/YY</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-back">
+                                        <div class="card-stripe"></div>
+                                        <div class="card-cvv">
+                                            <span class="label">CVV</span>
+                                            <div class="cvv-box">•••</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="card-number">Card Number</label>
+                                    <div class="input-icon">
+                                        <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                                        <i class="card-icon fab fa-cc-visa"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="card-name">Name on Card</label>
+                                    <input type="text" id="card-name" name="card-name" placeholder="John Doe" required>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="expiry-date">Expiration Date</label>
+                                        <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" maxlength="5" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4" required>
+                                        <div class="cvv-hint">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="tooltip">3 or 4 digit security code on the back of your card</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <h3>Billing Address</h3>
+                                
+                                <div class="form-group">
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="same-as-shipping" name="same-as-shipping" checked>
+                                        <label for="same-as-shipping">Same as shipping address</label>
+                                    </div>
+                                </div>
+                                
+                                <div id="billing-address-form" class="billing-address-form hidden">
+                                    <div class="form-group">
+                                        <label for="billing-address">Street Address</label>
+                                        <input type="text" id="billing-address" name="billing-address">
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="billing-city">City</label>
+                                            <input type="text" id="billing-city" name="billing-city">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="billing-state">State</label>
+                                            <select id="billing-state" name="billing-state">
+                                                <option value="">Select State</option>
+                                                <option value="AL">Alabama</option>
+                                                <option value="AK">Alaska</option>
+                                                <!-- Add all states here -->
+                                                <option value="WY">Wyoming</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="billing-zip">ZIP Code</label>
+                                        <input type="text" id="billing-zip" name="billing-zip">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" id="payment-back" class="btn btn-outline">Back to Shipping</button>
+                                <button type="button" id="payment-next" class="btn">Pay Now</button>
+                            </div>
+                        </form>
+                        
+                        <!-- Confirmation -->
+                        <div id="confirmation" class="checkout-form">
+                            <div class="confirmation-content">
+                                <div class="confirmation-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <h2>Payment Successful!</h2>
+                                <p>Your order has been placed and is being processed.</p>
+                                <div class="confirmation-details">
+                                    <div class="confirmation-row">
+                                        <span>Order Number:</span>
+                                        <span id="order-number">RN-12345</span>
+                                    </div>
+                                    <div class="confirmation-row">
+                                        <span>Transaction ID:</span>
+                                        <span id="transaction-id">TXN-987654321</span>
+                                    </div>
+                                    <div class="confirmation-row">
+                                        <span>Date:</span>
+                                        <span id="order-date">April 4, 2025</span>
+                                    </div>
+                                    <div class="confirmation-row">
+                                        <span>Total Amount:</span>
+                                        <span id="confirmation-total">$0.00</span>
+                                    </div>
+                                </div>
+                                <p>A confirmation email has been sent to <span id="confirmation-email">your@email.com</span></p>
+                                <div class="confirmation-actions">
+                                    <a href="index.html" class="btn">Continue Shopping</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="payment-processing-overlay" id="payment-processing">
+        <div class="processing-content">
+            <div class="spinner"></div>
+            <h3>Processing Payment</h3>
+            <p>Please do not close this window...</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ReptileNutrition</h3>
+                    <p>Providing premium quality food for reptiles since 2010.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Reptile St, Herp City</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@reptilenutrition.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 ReptileNutrition. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="product-data.js"></script>
+    <script src="script.js"></script>
+    <script src="checkout.js"></script>
+</body>
+</html>
